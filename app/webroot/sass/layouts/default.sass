@@ -1,22 +1,18 @@
 @import colors, compass
 
 a
-	color: $white
+	color: $azul
 	
 	&:hover
-		color: $white
+		color: $azulClaro
 
 body
-	// +background-image(linear-gradient(darken($azulOscuro, 20), $azul))
-	background-color: $azul
-	background-image: image-url('backgrounds/backFD.jpg')
-	background-repeat: no-repeat
-	// background-size: 100% 100%
-	+background-size(cover)
-	color: $white
+	background-color: $white
+	color: $black
 
 footer
 	margin-top: 50px
+	padding: 30px 15px 60px 15px	
 
 h1.category
 	margin-top: -6px
@@ -43,11 +39,12 @@ h3, h5
 	& > span
 		padding: 15px
 
-.container-full
-	margin: 0 auto
-	width: 100%
-	min-height: 100%
-	overflow: hidden
+.container
+	min-height: 480px
+
+.dropdown-menu > li > a:hover
+	background-color: $grisOscuro
+	color: $white
 
 .logo-superior
 	// margin-top: 110px

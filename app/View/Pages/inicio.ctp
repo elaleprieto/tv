@@ -22,38 +22,6 @@ foreach ($documental as $track)
 $documental2 = $this->requestAction(Router::url(array('controller' => 'tracks', 'action' => 'get', $cantidad, 'documental', $excluidos)));
 ?>
 
-<!-- Carousel Video -->
-<div class="row">
-	<div class="col-sm-3 col-sm-offset-1">
-		<div class="col-sm-12">
-			<a href="/"> <img class="img-responsive logo-superior" src="/img/logos/federal.png" /> </a>
-		</div>
-		<div class="col-sm-12">
-			<p>
-				Más de 500 horas de contenidos audiovisuales de Argentina.
-				<br />
-				Series y unitarios para tv.
-				<br />
-				Cortometrajes y largometrajes.
-				<br />
-				Todos realizados con calidad broadcasting internacional.
-			</p>
-		</div>
-	</div>
-	<div class="col-sm-7">
-		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1">
-				<?php echo $this->requestAction('tracks/getReel'); ?>
-			</div>
-			<div class="col-sm-12 slogan text-center">
-				<span><strong>CONTENIDOS AUDIOVISUALES CON IDENTIDAD LOCAL Y PROYECCION INTERNACIONAL</strong></span>
-			</div>
-			
-		</div>
-	</div>
-</div>
-<br>
-
 <!-- Videos selección aleatoria -->
 <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">

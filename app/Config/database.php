@@ -61,9 +61,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => 'ale',
-		// 'database' => 'federaldistribuciones',
-		'database' => 'fedisUTF8',
-		'prefix' => '',
+		'database' => 'tramaaudiovisual',
 		'encoding' => 'utf8',
 	);
 
