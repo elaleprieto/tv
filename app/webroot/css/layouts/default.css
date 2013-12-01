@@ -1,0 +1,138 @@
+/* line 3, ../../sass/layouts/default.sass */
+a {
+  color: white;
+}
+/* line 6, ../../sass/layouts/default.sass */
+a:hover {
+  color: white;
+}
+
+/* line 9, ../../sass/layouts/default.sass */
+body {
+  background-color: #2775fc;
+  background-image: url('/img/backgrounds/backFD.jpg?1379541830');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+/* line 18, ../../sass/layouts/default.sass */
+footer {
+  margin-top: 50px;
+}
+
+/* line 21, ../../sass/layouts/default.sass */
+h1.category {
+  margin-top: -6px;
+}
+/* line 24, ../../sass/layouts/default.sass */
+h1.category > .label-default {
+  background-color: black;
+  color: #fd8d46;
+  font-weight: normal;
+}
+
+/* line 29, ../../sass/layouts/default.sass */
+h3, h5 {
+  color: #fd8d46;
+  font-weight: bold;
+  margin: 0;
+}
+/* line 34, ../../sass/layouts/default.sass */
+h3 > a, h5 > a {
+  color: #fd8d46;
+}
+
+/* line 37, ../../sass/layouts/default.sass */
+.auspiciantes {
+  margin-bottom: 30px;
+}
+
+/* line 40, ../../sass/layouts/default.sass */
+.categories-menu {
+  margin-bottom: 10px;
+}
+/* line 43, ../../sass/layouts/default.sass */
+.categories-menu > span {
+  padding: 15px;
+}
+
+/* line 46, ../../sass/layouts/default.sass */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* line 52, ../../sass/layouts/default.sass */
+.logo-superior {
+  margin-bottom: 20px;
+}
+/* line 60, ../../sass/layouts/default.sass */
+.logo-superior .img-responsive {
+  width: 100px;
+}
+
+/* line 67, ../../sass/layouts/default.sass */
+.nav-categorias {
+  position: relative;
+  z-index: -1;
+}
+
+/* line 71, ../../sass/layouts/default.sass */
+.nav-tabs {
+  font-weight: bold;
+}
+/* line 74, ../../sass/layouts/default.sass */
+.nav-tabs > li > a:hover {
+  background-color: #fd8d46;
+}
+
+/* line 77, ../../sass/layouts/default.sass */
+.navbar-form {
+  margin: 4px;
+}
+
+/* line 83, ../../sass/layouts/default.sass */
+.navbar-top {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #994717), color-stop(100%, #fd8d46));
+  background-image: -webkit-linear-gradient(#994717, #fd8d46);
+  background-image: -moz-linear-gradient(#994717, #fd8d46);
+  background-image: -o-linear-gradient(#994717, #fd8d46);
+  background-image: linear-gradient(#994717, #fd8d46);
+  background-color: #fd8d46;
+  border-bottom-color: #994717;
+  border-bottom-width: 10px;
+  -moz-border-radius-bottomright: 70%;
+  -webkit-border-bottom-right-radius: 70%;
+  border-bottom-right-radius: 70%;
+  -moz-border-radius-bottomleft: 70%;
+  -webkit-border-bottom-left-radius: 70%;
+  border-bottom-left-radius: 70%;
+}
+
+/* line 95, ../../sass/layouts/default.sass */
+.navbar-out {
+  background-color: #2775fc;
+  border-bottom-color: #2775fc;
+  border-bottom-width: 10px;
+  -moz-border-radius-bottomright: 70%;
+  -webkit-border-bottom-right-radius: 70%;
+  border-bottom-right-radius: 70%;
+  -moz-border-radius-bottomleft: 70%;
+  -webkit-border-bottom-left-radius: 70%;
+  border-bottom-left-radius: 70%;
+  height: 90px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1000;
+}
+
+/* line 110, ../../sass/layouts/default.sass */
+a.no-decoration:hover {
+  text-decoration: none;
+}
