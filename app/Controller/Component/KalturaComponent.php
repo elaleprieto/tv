@@ -8,17 +8,11 @@ App::import('Vendor', 'kaltura/KalturaClient');
 class KalturaComponent extends Component {
 	public $userId = 'admin';
 
-	# Kaltura.com
-	// public $adminSecret = '1570499fc0443031b5e73b67c4730200';
-	// public $partnerId = '1483331';
-	// public $url = 'http://www.kaltura.com';
-
 	# LibreKaltura.com.ar
-	// public $adminSecret = 'd826fc496bb8427d9465a9905e0493fd';
-	public $adminSecret = '9d964723786318b4cd579f9b53d2e7e5'; # Usuario: Ale
-	public $partnerId = '106';
-	// public $adminSecret = 'a5c1cb2c9bcd66b825db68533c3ec792';
-	// public $partnerId = '99';
+	// public $adminSecret = '9d964723786318b4cd579f9b53d2e7e5'; # Usuario: Ale
+	// public $partnerId = '106';
+	public $adminSecret = '8b1d810ab96230b4d156f10c89f2e818'; # Usuario: contacto@tramaaudiovisual.com.ar
+	public $partnerId = '113';
 	
 	public $url = 'http://190.57.232.122';
 	
