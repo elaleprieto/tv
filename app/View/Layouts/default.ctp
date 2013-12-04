@@ -59,7 +59,7 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Trama Audiovisual</a>
+				<a class="navbar-brand" href="http://tramaaudiovisual.com.ar">Trama Audiovisual</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
