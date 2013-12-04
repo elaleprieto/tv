@@ -295,7 +295,7 @@ echo $this->Html->script(array(
 					</div>
 					<div class="row">
 						<?php
-						echo $this->Form->input('habilitado', array('div' => 'col-sm-12'));
+						echo $this->Form->input('destacado', array('div' => 'col-sm-12'));
 						?>
 					</div>
 				</div>

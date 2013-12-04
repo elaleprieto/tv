@@ -290,7 +290,7 @@ class TracksController extends AppController {
 		);
 		
 		$options['conditions'] = array('Category.id' => $categoria_id
-			, 'Track.habilitado' => true
+			, 'Track.destacado' => true
 		);
 		
 		# Se excluyen algunos videos para no repetirlos en el listado

@@ -112,7 +112,7 @@ echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/
 					</div>
 					<div class="row">
 						<?php
-						echo $this->Form->input('habilitado', array('div' => 'col-sm-12'));
+						echo $this->Form->input('destacado', array('div' => 'col-sm-12'));
 						?>
 					</div>
 				</div>
