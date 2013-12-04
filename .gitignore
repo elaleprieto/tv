@@ -1,0 +1,31 @@
+tmp/*
+[Cc]onfig/*
+app/tmp/*
+app/img/fotos/*
+app/[Cc]onfig/*
+app/Vendor/*
+app/webroot/.sass-cache/*
+!empty
+*.htaccess*
+.project
+
+# User specific & automatically generated files #
+#################################################
+/app/tmp
+/lib/Cake/Console/Templates/skel/tmp/
+/plugins
+/vendors
+/build
+/dist
+/tags
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
