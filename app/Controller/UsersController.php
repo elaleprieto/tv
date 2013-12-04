@@ -96,7 +96,9 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
-		$options['conditions'] = array('weight <' => 20);
+		
+		# weight 10 = Usuario
+		$options['conditions'] = array('weight <=' => 10); 
 		$rols = $this->User->Rol->find('list', $options);
 		$this->set(compact('rols'));
 	}
