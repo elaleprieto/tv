@@ -24,8 +24,7 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 	<head>
 		<?php echo $this->Html->charset(); ?>
 		<title> <?php echo $cakeDescription ?>:
-			<?php echo $title_for_layout; ?>
-		</title>
+			<?php echo $title_for_layout; ?> </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<?php
@@ -50,7 +49,7 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 	<body>
 
 		<nav class="navbar navbar-inverse" role="navigation">
-			
+
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -69,59 +68,39 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 						<a href="/">Inicio</a>
 					</li>
 					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/noticias" target="_blank">
-							Noticias
-						</a>
+						<a href="http://tramaaudiovisual.com.ar/index.php/noticias" target="_blank"> Noticias </a>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Sobre Trama <b class="caret"></b>
-						</a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sobre Trama <b class="caret"></b> </a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/por-que-trama" target="_blank">
-									¿Por qué Trama?
-								</a>
+								<a href="http://tramaaudiovisual.com.ar/index.php/por-que-trama" target="_blank"> ¿Por qué Trama? </a>
 							</li>
 							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/que-hacemos" target="_blank">
-									¿Qué hacemos?
-								</a>
+								<a href="http://tramaaudiovisual.com.ar/index.php/que-hacemos" target="_blank"> ¿Qué hacemos? </a>
 							</li>
 							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/quienes-somos" target="_blank">
-									¿Quiénes somos?
-								</a>
+								<a href="http://tramaaudiovisual.com.ar/index.php/quienes-somos" target="_blank"> ¿Quiénes somos? </a>
 							</li>
 							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/como-sumarse" target="_blank">
-									¿Cómo sumarse?
-								</a>
+								<a href="http://tramaaudiovisual.com.ar/index.php/como-sumarse" target="_blank"> ¿Cómo sumarse? </a>
 							</li>
 							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/contactanos" target="_blank">
-									Contactanos
-								</a>
+								<a href="http://tramaaudiovisual.com.ar/index.php/contactanos" target="_blank"> Contactanos </a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank">
-							<i class="fa fa-facebook-square fa-lg"></i>
-						</a>
+						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank"> <i class="fa fa-facebook-square fa-lg"></i> </a>
 					</li>
 					<li>
-						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank">
-							<i class="fa fa-twitter-square fa-lg"></i>
-						</a>
+						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank"> <i class="fa fa-twitter-square fa-lg"></i> </a>
 					</li>
 					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/contactanos" class="no-decoration" target="_blank">
-							<i class="fa fa-envelope fa-lg"></i>
-						</a>
+						<a href="http://tramaaudiovisual.com.ar/index.php/contactanos" class="no-decoration" target="_blank"> <i class="fa fa-envelope fa-lg"></i> </a>
 					</li>
 				</ul>
-				
+
 				<!-- Navbar Right -->
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Buscar -->
@@ -133,56 +112,51 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 							<?php echo __('Buscar'); ?>
 						</button>
 					</form>
-				
+
 					<!-- Login -->
 					<?php if ($this->Session->read('Auth.User.name') != ''): ?>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<?php echo AuthComponent::user('name');	?> <b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="/tracks/create">
-										<?php echo __('Nuevo Video'); ?>
-									</a>
-								</li>
-								<li>
-									<a href="/users/logout">
-										<?php echo __('Salir'); ?>
-									</a>
-								</li>
-							</ul>
-						</li>
-	
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<?php echo AuthComponent::user('name'); ?>
+						<b class="caret"></b> </a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="/tracks/create"> <?php echo __('Nuevo Video'); ?> </a>
+							</li>
+							<li>
+								<a href="/users/logout"> <?php echo __('Salir'); ?> </a>
+							</li>
+						</ul>
+					</li>
+
 					<?php else: ?>
-						<li>
-							<?php
-							echo $this->Html->link(__('Ingresar'), array(
-								'controller' => 'users',
-								'action' => 'login'
-							), array('id' => 'menu_superior_derecha_verde'));
-							?>
-						</li>
+					<li>
+						<?php
+						echo $this->Html->link(__('Ingresar'), array(
+							'controller' => 'users',
+							'action' => 'login'
+						), array('id' => 'menu_superior_derecha_verde'));
+						?>
+					</li>
 					<?php endif; ?>
-					
+
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav>
 
 		<div class="container">
-			
+
 			<!-- Logo -->
 			<div class="row">
 				<div class="col-sm-12">
 					<img class="img-responsive logo-superior" src="/img/logos/bannerTrama.png" />
 				</div>
 			</div>
-			
+
 			<?php echo $this->fetch('content'); ?>
 
 		</div>
-
 
 		<!-- footer -->
 		<footer class="navbar-inverse">
@@ -191,10 +165,13 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 			<div class="row auspiciantes">
 				<div class="col-sm-1 col-sm-offset-4 text-center">
 					<?php
-					echo $this->Html->image('logos/incaa.png', array(
-						'alt' => 'INCAA',
+					echo $this->Html->link($this->Html->image('logos/usinademedios.png', array(
+						'alt' => 'Usina de Medios',
 						'border' => '0',
 						'class' => 'img-responsive'
+					)), 'http://www.usinademedios.org.ar/', array(
+						'escape' => false,
+						'target' => '_blank'
 					));
 					?>
 				</div>
@@ -211,16 +188,18 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 				-->
 				<div class="col-sm-2 col-sm-offset-2 text-center">
 					<?php
-					echo $this->Html->image('logos/argentinaPaisDeHonor.png', array(
-						'alt' => 'Argentina, país de honor',
+					echo $this->Html->link($this->Html->image('logos/geomedio.png', array(
+						'alt' => 'GeoMedio',
 						'border' => '0',
 						'class' => 'img-responsive'
+					)), 'http://www.geomedio.com.ar/', array(
+						'escape' => false,
+						'target' => '_blank'
 					));
 					?>
 				</div>
 			</div>
 		</footer>
-
 
 		<?php echo $this->element('sql_dump'); ?>
 
