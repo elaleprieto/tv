@@ -36,13 +36,6 @@ echo $this->Html->script(array(
 			
 			<div class="row">
 				<?php
-				echo $this->Form->input('catalogoId', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Catalogo ID'
-				));
 				echo $this->Form->input('title', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
@@ -51,31 +44,12 @@ echo $this->Html->script(array(
 					'placeholder' => 'Titulo',
 					'required'
 				));
-				// echo $this->Form->input('titulo', array('class' => 'col-sm-12', 'div' => 'col-sm-4', 'label' => false, 'placeholder' => 'Titulo'));
 				echo $this->Form->input('formato', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
 					'placeholder' => 'Formato'
-				));
-				?>
-			</div>
-			<div class="row">
-				<?php
-				echo $this->Form->input('presentacion', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Presentacion'
-				));
-				echo $this->Form->input('capitulos', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Capitulos'
 				));
 				echo $this->Form->input('duracion', array(
 					'autocomplete' => false,
@@ -88,44 +62,12 @@ echo $this->Html->script(array(
 			</div>
 			<div class="row">
 				<?php
-				echo $this->Form->input('elenco', array(
+				echo $this->Form->input('capitulos', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Elenco'
-				));
-				echo $this->Form->input('conduccion', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Conduccion'
-				));
-				echo $this->Form->input('entrevistados', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Entrevistados'
-				));
-				?>
-			</div>
-			<div class="row">
-				<?php
-				echo $this->Form->input('autor', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Autor'
-				));
-				echo $this->Form->input('guion', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Guion'
+					'placeholder' => 'Capitulos'
 				));
 				echo $this->Form->input('director', array(
 					'autocomplete' => false,
@@ -134,10 +76,6 @@ echo $this->Html->script(array(
 					'label' => false,
 					'placeholder' => 'Director'
 				));
-				?>
-			</div>
-			<div class="row">
-				<?php
 				echo $this->Form->input('productor', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
@@ -145,55 +83,23 @@ echo $this->Html->script(array(
 					'label' => false,
 					'placeholder' => 'Productor'
 				));
-				echo $this->Form->input('produccion_ejecutiva', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Produccion Ejecutiva'
-				));
-				echo $this->Form->input('produccion_general', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Produccion General'
-				));
 				?>
 			</div>
 			<div class="row">
 				<?php
-				echo $this->Form->input('mail', array(
+				echo $this->Form->input('mail_productor', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Mail'
+					'placeholder' => 'Mail Productor'
 				));
-				echo $this->Form->input('distribuidor', array(
+				echo $this->Form->input('mail_medio', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Distribuidor'
-				));
-				echo $this->Form->input('contacto', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Contacto'
-				));
-				?>
-			</div>
-			<div class="row">
-				<?php
-				echo $this->Form->input('mail_distribuidora', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Mail Distribuidora'
+					'placeholder' => 'Mail Medio'
 				));
 				echo $this->Form->input('website', array(
 					'autocomplete' => false,
@@ -202,37 +108,23 @@ echo $this->Html->script(array(
 					'label' => false,
 					'placeholder' => 'Website'
 				));
-				echo $this->Form->input('telefono', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Telefono'
-				));
 				?>
 			</div>
 			<div class="row">
 				<?php
-				echo $this->Form->input('sinopsis_es', array(
+				echo $this->Form->input('protagonistas', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Sinopsis (Espanol)'
+					'placeholder' => 'Protagonistas'
 				));
-				echo $this->Form->input('sinopsis_en', array(
+				echo $this->Form->input('sinopsis', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Sinopsis (Ingles)'
-				));
-				echo $this->Form->input('sinopsis_po', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Sinopsis (Portugues)'
+					'placeholder' => 'Sinopsis'
 				));
 				?> 
 			</div>
@@ -275,20 +167,20 @@ echo $this->Html->script(array(
 							<a href="#videos" class="btn btn-primary pull-right">Videos &darr;</a>
 						</div>
 						<div>&nbsp;</div> -->
-						<div class="col-sm-6">
+						<!-- <div class="col-sm-6">
 							<div class="row">
 								<?php
-								echo $this->Form->input('portadaId', array(
-									'autocomplete' => false,
-									'class' => 'col-sm-12 form-control',
-									'ng-model' => 'portadaId',
-									'div' => 'col-sm-12',
-									'label' => false,
-									'placeholder' => 'Portada ID'
-								));
+								// echo $this->Form->input('portadaId', array(
+									// 'autocomplete' => false,
+									// 'class' => 'col-sm-12 form-control',
+									// 'ng-model' => 'portadaId',
+									// 'div' => 'col-sm-12',
+									// 'label' => false,
+									// 'placeholder' => 'Portada ID'
+								// ));
 								?>
 							</div>
-						</div>
+						</div> -->
 						<!-- <div class="col-sm-6">
 							<a href="#imagenes" class="btn btn-primary pull-right">Imágenes &darr;</a>
 						</div> -->
