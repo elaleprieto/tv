@@ -49,7 +49,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('ID Asociado'),
-					'required' => 'required',
 					'type' => 'text'
 				));
 				?>
@@ -62,7 +61,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('Teléfono del Medio'),
-					'required' => 'required',
 					'type' => 'tel'
 				));
 				?>
@@ -75,7 +73,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('Mail del Medio'),
-					'required' => 'required',
 					'type' => 'email'
 				));
 				?>
@@ -88,7 +85,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('Nombre del Responsable'),
-					'required' => 'required',
 					'type' => 'text'
 				));
 				?>
@@ -101,7 +97,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('Teléfono del Responsable'),
-					'required' => 'required',
 					'type' => 'tel'
 				));
 				?>
@@ -114,7 +109,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('Mail del Responsable'),
-					'required' => 'required',
 					'type' => 'email'
 				));
 				?>
@@ -127,7 +121,6 @@
 					'class' => 'form-control',
 					'label' => false,
 					'placeholder' => __('Skype'),
-					'required' => 'required',
 					'type' => 'text'
 				));
 				?>
