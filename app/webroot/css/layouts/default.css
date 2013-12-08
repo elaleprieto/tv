@@ -56,46 +56,51 @@ h3 > a, h5 > a {
 }
 
 /* line 42, ../../sass/layouts/default.sass */
+.checkbox {
+  color: white;
+}
+
+/* line 46, ../../sass/layouts/default.sass */
 .container {
   min-height: 480px;
 }
 
-/* line 45, ../../sass/layouts/default.sass */
+/* line 49, ../../sass/layouts/default.sass */
 .dropdown-menu > li > a:hover {
   background-color: #333333;
   color: white;
 }
 
-/* line 49, ../../sass/layouts/default.sass */
+/* line 53, ../../sass/layouts/default.sass */
 .logo-superior {
   margin-bottom: 20px;
 }
-/* line 57, ../../sass/layouts/default.sass */
+/* line 61, ../../sass/layouts/default.sass */
 .logo-superior .img-responsive {
   width: 100px;
 }
 
-/* line 64, ../../sass/layouts/default.sass */
+/* line 68, ../../sass/layouts/default.sass */
 .nav-categorias {
   position: relative;
   z-index: -1;
 }
 
-/* line 68, ../../sass/layouts/default.sass */
+/* line 72, ../../sass/layouts/default.sass */
 .nav-tabs {
   font-weight: bold;
 }
-/* line 71, ../../sass/layouts/default.sass */
+/* line 75, ../../sass/layouts/default.sass */
 .nav-tabs > li > a:hover {
   background-color: #fd8d46;
 }
 
-/* line 74, ../../sass/layouts/default.sass */
+/* line 78, ../../sass/layouts/default.sass */
 .navbar-form {
   margin: 4px;
 }
 
-/* line 80, ../../sass/layouts/default.sass */
+/* line 84, ../../sass/layouts/default.sass */
 .navbar-top {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #994717), color-stop(100%, #fd8d46));
   background-image: -webkit-linear-gradient(#994717, #fd8d46);
@@ -113,7 +118,7 @@ h3 > a, h5 > a {
   border-bottom-left-radius: 70%;
 }
 
-/* line 92, ../../sass/layouts/default.sass */
+/* line 96, ../../sass/layouts/default.sass */
 .navbar-out {
   background-color: #0054a6;
   border-bottom-color: #0054a6;
@@ -130,7 +135,7 @@ h3 > a, h5 > a {
   z-index: 1000;
 }
 
-/* line 107, ../../sass/layouts/default.sass */
+/* line 111, ../../sass/layouts/default.sass */
 a.no-decoration:hover {
   text-decoration: none;
 }

@@ -62,6 +62,7 @@
           $scope.mensaje.text = 'Formulario enviado correctamente.';
           $scope.mensaje.tag = 'success';
           $('#formulario')[0].reset();
+          $('#tags1').importTags('ejemplo');
           $scope.$apply();
           return $timeout(function() {
             return $scope.mensaje.text = '';
