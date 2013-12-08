@@ -69,10 +69,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'test_federaldistribuciones',
-		'prefix' => '',
-		//'encoding' => 'utf8',
+		'login' => 'root',
+		'password' => 'ale',
+		'database' => 'test_tramaaudiovisual',
+		'encoding' => 'utf8',
 	);
 }

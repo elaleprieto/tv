@@ -40,4 +40,20 @@ class TagTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
+	public function testTagSet() {
+		$trackId = 1;
+		$tags = array('ejemplo');
+		$this->Tag->recursive = -1;
+		$tagNotFound = $this->Tag->findByTitle('ejemplo');
+		
+		$resultado = $this->Tag->setTags($trackId, $tags);
+		
+		$tagFound = $this->Tag->findByTitle('ejemplo');
+		
+		$this->assertEqual(0, sizeof($tagNotFound));
+		$this->assertEqual(1, sizeof($tagFound));
+		
+		
+	}
+
 }
