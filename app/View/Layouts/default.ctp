@@ -104,9 +104,34 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 				<!-- Navbar Right -->
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Buscar -->
-					<form class="navbar-form navbar-left" role="search">
+					<form action="/tracks/search" class="navbar-form navbar-left" method="get" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="<?php echo __('Buscar'); ?>">
+							<input type="text" name="q" class="form-control" placeholder="<?php echo __('Buscar'); ?>">
+						</div>
+
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<!-- <input type="checkbox"> Remember me -->
+									<input type="checkbox" name="c" value="1"> Categorías
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<!-- <input type="checkbox"> Remember me -->
+									<input type="checkbox" name="t" value="1"> Etiquetas
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<!-- <input type="checkbox"> Remember me -->
+									<input type="checkbox" name="u" value="1"> Usuarios
+								</label>
+							</div>
 						</div>
 						<button type="submit" class="btn btn-default">
 							<?php echo __('Buscar'); ?>
@@ -123,6 +148,9 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 						<ul class="dropdown-menu">
 							<li>
 								<a href="/tracks/create"> <?php echo __('Nuevo Video'); ?> </a>
+							</li>
+							<li>
+								<a href="/tracks"> <?php echo __('Listar Videos'); ?> </a>
 							</li>
 							<li>
 								<a href="/users/logout"> <?php echo __('Salir'); ?> </a>

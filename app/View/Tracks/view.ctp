@@ -1,23 +1,7 @@
 <?php //debug($track) ?>
 
 <div class="row">
-	<div class="col-sm-3 col-sm-offset-1">
-		<div class="col-sm-12">
-			<a href="/"> <img class="img-responsive logo-superior" src="/img/logos/federal.png" /> </a>
-		</div>
-		<div class="col-sm-12">
-			<p>
-				Más de 500 horas de contenidos audiovisuales de Argentina.
-				<br />
-				Series y unitarios para tv.
-				<br />
-				Cortometrajes y largometrajes.
-				<br />
-				Todos realizados con calidad broadcasting internacional.
-			</p>
-		</div>
-	</div>
-	<div class="col-sm-8">
+		<div class="col-sm-8">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 text-right">
 				<h4 class="category"> [ <?php echo strtolower($track['Category'][0]['title']); ?> ] </h4>

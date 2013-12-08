@@ -1,7 +1,10 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 
 <?php
-echo $this->Html->css(array('tracks/add', 'vendor/jquery.tagsinput'));
+echo $this->Html->css(array(
+	'tracks/add',
+	'vendor/jquery.tagsinput'
+));
 echo $this->Html->script(array(
 	'//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js',
 	'angular/controllers',
@@ -168,7 +171,8 @@ echo $this->Html->script(array(
 							'div' => 'col-sm-12',
 							'label' => false,
 							'placeholder' => 'Video ID',
-							'required' => 'required'
+							'required' => 'required',
+							'x-ng-init' => 'entryId="' . $this->data['Track']['entryId'] . '"'
 						));
 						?>
 						<!-- <div class="col-sm-6">
@@ -222,7 +226,7 @@ echo $this->Html->script(array(
 		wmode : "opaque"
 	};
 	// php to js
-	var flashVars =  
+	var flashVars =
  <?php echo json_encode($flashVars); ?>;
 
 	<!-- embed flash object -->
