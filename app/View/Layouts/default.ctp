@@ -139,7 +139,7 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 					</form>
 
 					<!-- Login -->
-					<?php if ($this->Session->read('Auth.User.name') != ''): ?>
+					<?php if (AuthComponent::user('name') != ''): ?>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
