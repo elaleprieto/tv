@@ -23,7 +23,7 @@
 							<dd><?php echo $track['Track']['capitulos'] ?></dd>
 							<dt>Duración</dt>
 							<dd><?php echo $track['Track']['duracion'] ?></dd>
-							<dt>Protagonistas</dt>
+							<dt>Protagonistas/Conductor/Entrevistados</dt>
 							<dd><?php echo $track['Track']['protagonistas'] ?></dd>
 							<dt>Director</dt>
 							<dd><?php echo $track['Track']['director'] ?></dd>
@@ -35,7 +35,7 @@
 							<dd><?php echo $track['Track']['mail_medio'] ?></dd>
 							<dt>Website</dt>
 							<dd><?php echo $track['Track']['website'] ?></dd>
-							<dt>Sinopsis</dt>
+							<dt>Sinopsis/Síntesis de la noticia</dt>
 							<dd><?php echo $track['Track']['sinopsis'] ?></dd>
 						</dl>
 					</div>

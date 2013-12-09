@@ -136,14 +136,14 @@ echo $this->Html->script(array(
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Protagonistas'
+					'placeholder' => 'Protagonistas/Conductor/Entrevistados'
 				));
 				echo $this->Form->input('sinopsis', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Sinopsis'
+					'placeholder' => 'Sinopsis/Síntesis de la noticia'
 				));
 				?>
 				<?php
