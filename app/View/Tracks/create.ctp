@@ -80,20 +80,20 @@ echo $this->Html->script(array(
 					'placeholder' => 'Capitulos',
 					'type' => 'text'
 				));
-				echo $this->Form->input('director', array(
-					'autocomplete' => false,
-					'class' => 'col-sm-12 form-control',
-					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Director',
-					'type' => 'text'
-				));
 				echo $this->Form->input('productor', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
 					'placeholder' => 'Productor',
+					'type' => 'text'
+				));
+				echo $this->Form->input('director', array(
+					'autocomplete' => false,
+					'class' => 'col-sm-12 form-control',
+					'div' => 'col-sm-4',
+					'label' => false,
+					'placeholder' => 'Director',
 					'type' => 'text'
 				));
 				?>
