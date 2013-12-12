@@ -1,6 +1,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 
 <?php
+debug($quapitulos['Quapitulo']['title']);
 echo $this->Html->css(array('tracks/add', 'vendor/jquery.tagsinput'));
 echo $this->Html->script(array(
 	'//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js',
@@ -26,6 +27,7 @@ echo $this->Html->script(array(
 	
 	<h2><?php echo __('Cargador'); ?></h2>
 	<hr />
+	<p>formulario.$valid = {{formulario.$valid}}</p>
 	<div class="row datos">
 		<div class="col-sm-12">
 			<?php echo $this->Form->create('Track', array(
@@ -72,13 +74,17 @@ echo $this->Html->script(array(
 			</div>
 			<div class="row">
 				<?php
+				$capitulos = array();
+				for ($i=0; $i < $quapitulos['Quapitulo']['title']; $i++) { 
+					$capitulos[$i+1] = $i + 1;
+				}
+				
 				echo $this->Form->input('capitulos', array(
-					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
-					'label' => false,
-					'placeholder' => 'Capitulos',
-					'type' => 'text'
+				    'options' => $capitulos,
+				    'empty' => '(Cantidad de Capítulos)',
+				    'label' => false
 				));
 				echo $this->Form->input('productor', array(
 					'autocomplete' => false,
@@ -240,6 +246,7 @@ echo $this->Html->script(array(
 		for (var i = 0; i < entries.length; i++) {
 			// alert("entries["+i+"]:EntryID = " + entries[i].entryId);
 			$('#TrackEntryId').val(entries[i].entryId);
+			$('#TrackEntryId').trigger('input');
 			$('#kcw').hide();
 		}
 	}

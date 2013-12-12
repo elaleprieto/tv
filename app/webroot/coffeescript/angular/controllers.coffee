@@ -53,6 +53,9 @@ App.controller 'TracksController', ($scope, $http, $timeout) ->
 						$scope.mensaje.text = ''
 					, 5000
 					# window.location = '/tracks/create'
+		else
+			$scope.mensaje.text = 'Verifique el Formulario.'
+			$scope.mensaje.tag = 'danger'
 
 	$scope.init = ->
 		$scope.getMedias()

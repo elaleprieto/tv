@@ -133,8 +133,10 @@ class TracksController extends AppController {
 			}
 		}
 		
-
 		$this->set('flashVars', $this->Kaltura->getUploadFlashVars());
+		
+		$this->loadModel('Quapitulo', 1);
+		$this->set('quapitulos', $this->Quapitulo->read());
 
 		$categories = $this->Track->Category->find('list');
 		$tags = $this->Track->Tag->find('list');

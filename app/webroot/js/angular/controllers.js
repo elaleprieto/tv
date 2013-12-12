@@ -68,6 +68,9 @@
             return $scope.mensaje.text = '';
           }, 5000);
         });
+      } else {
+        $scope.mensaje.text = 'Verifique el Formulario.';
+        return $scope.mensaje.tag = 'danger';
       }
     };
     $scope.init = function() {
