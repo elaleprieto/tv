@@ -18,3 +18,8 @@ input[type=checkbox] {
   background-color: yellow;
   color: black;
 }
+
+/* line 17, ../../sass/tracks/add.sass */
+.hidden {
+  display: none;
+}
