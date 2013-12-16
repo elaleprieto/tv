@@ -74,7 +74,7 @@ $tracks = $this->requestAction(Router::url(array('controller' => 'tracks', 'acti
 							</h3>
 							<p><?php echo $tracks[$i]['Track']['sinopsis'] ?></p>
 				 	</div>
-			<?php if (($i + 1) % 3 == 0): ?>
+			<?php if (($i + 1) % 3 == 0 || $i == sizeof($tracks) - 1): ?>
 				</div> <!-- /row -->
 			<?php endif; ?>
 		<?php endfor; ?>
