@@ -34,6 +34,7 @@
 	Router::connect('/buscar', array('controller' => 'tracks', 'action' => 'search'));
 	Router::connect('/buscar/*', array('controller' => 'tracks', 'action' => 'search'));
 	Router::connect('/contacto', array('controller' => 'pages', 'action' => 'display', 'contacto'));
+	Router::connect('/iframe', array('controller' => 'pages', 'action' => 'display', 'iframe'));
 	Router::connect('/inicio', array('controller' => 'pages', 'action' => 'display', 'inicio'));
 	Router::connect('/quienes', array('controller' => 'pages', 'action' => 'display', 'about'));
 

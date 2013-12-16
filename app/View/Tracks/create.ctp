@@ -7,6 +7,7 @@ echo $this->Html->script(array(
 	'tracks/create'
 ), array('inline' => false));
 ?>
+
 <div id="inicio" ng-app="App" ng-controller="TracksController">
 	<!-- <div class="row">
 		<div class="col-sm-12">
@@ -199,7 +200,7 @@ echo $this->Html->script(array(
 				<div class="col-sm-4">
 					<div class="row">
 						<?php
-						echo $this->Form->input('destacado', array('div' => 'col-sm-12'));
+						echo $this->Form->input('destacado', array('div' => 'col-sm-12', 'hiddenField' => false));
 						?>
 					</div>
 				</div>

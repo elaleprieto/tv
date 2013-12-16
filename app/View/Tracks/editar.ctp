@@ -1,10 +1,5 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-
 <?php
-echo $this->Html->css(array(
-	'tracks/add',
-	'vendor/jquery.tagsinput'
-));
+echo $this->Html->css(array('tracks/add', 'vendor/jquery.tagsinput'));
 echo $this->Html->script(array(
 	'//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js',
 	'angular/controllers',
@@ -12,6 +7,7 @@ echo $this->Html->script(array(
 	'tracks/create'
 ), array('inline' => false));
 ?>
+
 <div id="inicio" ng-app="App" ng-controller="TracksController">
 	<!-- <div class="row">
 		<div class="col-sm-12">
@@ -27,7 +23,7 @@ echo $this->Html->script(array(
 		</div>
 	</div>
 	
-	<h2><?php echo __('Cargador'); ?></h2>
+	<h2><?php echo __('Editar'); ?></h2>
 	<hr />
 	<div class="row datos">
 		<div class="col-sm-12">
@@ -46,6 +42,7 @@ echo $this->Html->script(array(
 			
 			<div class="row">
 				<?php
+				echo $this->Form->input('id');
 				echo $this->Form->input('title', array(
 					'autocomplete' => false,
 					'class' => 'col-sm-12 form-control',
@@ -166,7 +163,7 @@ echo $this->Html->script(array(
 						<?php
 						echo $this->Form->input('entryId', array(
 							'autocomplete' => false,
-							'class' => 'col-sm-12 form-control',
+							'class' => 'col-sm-12 form-control hidden',
 							'ng-model' => 'entryId',
 							'div' => 'col-sm-12',
 							'label' => false,
@@ -201,13 +198,20 @@ echo $this->Html->script(array(
 				<div class="col-sm-4">
 					<div class="row">
 						<?php
-						echo $this->Form->input('destacado', array('div' => 'col-sm-12'));
+						echo $this->Form->input('destacado', array('div' => 'col-sm-12', 'hiddenField' => false));
 						?>
 					</div>
 				</div>
 			</div>
+			<div class="row text-center">
+				<div id="kcw"></div>
+			</div>
 			<div class="row">
-				<button class="btn col-sm-10 col-sm-offset-1" ng-hide="mensaje.text" type="submit">
+				<p class="text-center">
+					No cierre esta ventana, y espere que termine de subir el video para guardar la ficha. 
+					Si desea cargar otro video, haga clic <a href="/tracks/create" target="_blank">aquí</a>.
+				</p>
+				<button class="btn col-sm-2 col-sm-offset-5" type="submit" x-ng-disabled="!entryId">
 					<?php echo __('Guardar'); ?>
 				</button>
 			</div>
@@ -216,9 +220,8 @@ echo $this->Html->script(array(
 	</div>
 </div>
 
-<div class="row text-center">
-	<div id="kcw"></div>
-</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script type="text/javascript">
 	var params = {
 		allowScriptAccess : "always",
@@ -244,6 +247,7 @@ echo $this->Html->script(array(
 		for (var i = 0; i < entries.length; i++) {
 			// alert("entries["+i+"]:EntryID = " + entries[i].entryId);
 			$('#TrackEntryId').val(entries[i].entryId);
+			$('#TrackEntryId').trigger('input');
 			$('#kcw').hide();
 		}
 	}

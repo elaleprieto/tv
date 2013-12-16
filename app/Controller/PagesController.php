@@ -78,6 +78,10 @@ class PagesController extends AppController {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
 		
+		if($page == 'iframe') {
+			$this->layout = 'ajax';
+		}
+		
 		// $kClient = $this->Kaltura->getKalturaClient();
 		// $kPlayer = $this->Kaltura->embedPlayer(); 
 		// $kUrlEmbed = $this->Kaltura->getUrlEmbed(); 

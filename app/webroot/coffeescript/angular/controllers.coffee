@@ -52,7 +52,7 @@ App.controller 'TracksController', ($scope, $http, $timeout) ->
 					$timeout () -> 
 						$scope.mensaje.text = ''
 					, 5000
-					# window.location = '/tracks/create'
+					# window.location = '/tracks/index'
 		else
 			$scope.mensaje.text = 'Verifique el Formulario.'
 			$scope.mensaje.tag = 'danger'

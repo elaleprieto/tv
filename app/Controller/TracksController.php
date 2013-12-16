@@ -10,7 +10,7 @@ class TracksController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this -> Auth -> allow('add', 'delete', 'edit', 'get', 'index', 'search', 'view', 'getReel', 'create');
+		$this -> Auth -> allow('add', 'delete', 'edit', 'get', 'iframe', 'index', 'search', 'view', 'getReel', 'create');
 	}
 
 /**
@@ -120,6 +120,7 @@ class TracksController extends AppController {
  */
 	public function create() {
 		if ($this->request->is('post')) {
+			$this->autoRender = false;
 			$track = $this->request->data;
 			$track['Track']['user_id'] = $this->Auth->user('id');
 			$this->Track->create();
@@ -127,9 +128,25 @@ class TracksController extends AppController {
 				$trackId = $this->Track->id;
 				$this->Track->Tag->setTags($trackId, explode(',', $track['Track']['tags']));
 				$this->Session->setFlash(__('The track has been saved'));
-				// return $this->redirect(array('action' => 'add'));
+				return true;
 			} else {
-				$this->Session->setFlash(__('The track could not be saved. Please, try again.'));
+				throw new Exception("Error Processing Request", 1);
+			}
+		}
+		if ($this->request->is('put')) {
+			$this->autoRender = false;
+			$track = $this->request->data;
+			
+			# Ajuste porque no se modificaba
+			if (!isset($track['Track']['destacado']))
+				$track['Track']['destacado'] = false;
+			
+			if ($this->Track->save($track)) {
+				$this->Track->Tag->setTags($track['Track']['id'], explode(',', $track['Track']['tags']));
+				$this->Session->setFlash(__('The track has been saved'));
+				return true;
+			} else {
+				throw new Exception("Error Processing Request", 1);
 			}
 		}
 		
@@ -201,9 +218,17 @@ class TracksController extends AppController {
 			$options = array('conditions' => array('Track.' . $this->Track->primaryKey => $id));
 			$this->request->data = $this->Track->find('first', $options);
 		}
+
+		$this->set('flashVars', $this->Kaltura->getUploadFlashVars());
+
+		$this->loadModel('Quapitulo', 1);
+		$this->set('quapitulos', $this->Quapitulo->read());
+
 		$categories = $this->Track->Category->find('list');
 		$tags = $this->Track->Tag->find('list');
+
 		$this->set(compact('categories', 'tags'));
+		
 		$this->render('editar');
 		
 		// $kClient = $this->Kaltura->getKalturaClient();
@@ -316,6 +341,28 @@ class TracksController extends AppController {
 		
 		return $this->Track->find('all', $options);
 	}
+
+/**
+ * iframe method: usado por Inicio para desplegar videos
+ *
+ * @param string $cantidad, $categoria
+ * @param array excluded: ids de los excluidos
+ * @return void
+ */
+	public function iframe($cantidad = null) {
+		if (!$cantidad) {
+			throw new NotFoundException(__('Invalid track'));
+		}
+		
+		$options['conditions'] = array('Track.destacado' => true);
+		
+		$options['limit'] = $cantidad;
+		$options['order'] = 'RAND()';
+		
+		return $this->Track->find('all', $options);
+	}
+
+	
 	
 /**
  * search method: accedido desde la navbar
