@@ -64,9 +64,10 @@
           $('#formulario')[0].reset();
           $('#tags1').importTags('ejemplo');
           $scope.$apply();
-          return $timeout(function() {
+          $timeout(function() {
             return $scope.mensaje.text = '';
           }, 5000);
+          return window.location = '/tracks/index';
         });
       } else {
         $scope.mensaje.text = 'Verifique el Formulario.';
