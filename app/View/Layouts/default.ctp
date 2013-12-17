@@ -47,132 +47,6 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 
 	</head>
 	<body>
-
-		<nav class="navbar navbar-inverse" role="navigation">
-
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="http://tramaaudiovisual.com.ar">Trama Audiovisual</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="/">Inicio</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/noticias" target="_blank"> Noticias </a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sobre Trama <b class="caret"></b> </a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/por-que-trama" target="_blank"> ¿Por qué Trama? </a>
-							</li>
-							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/que-hacemos" target="_blank"> ¿Qué hacemos? </a>
-							</li>
-							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/quienes-somos" target="_blank"> ¿Quiénes somos? </a>
-							</li>
-							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/como-sumarse" target="_blank"> ¿Cómo sumarse? </a>
-							</li>
-							<li>
-								<a href="http://tramaaudiovisual.com.ar/index.php/contactanos" target="_blank"> Contactanos </a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank"> <i class="fa fa-facebook-square fa-lg"></i> </a>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank"> <i class="fa fa-twitter-square fa-lg"></i> </a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/contactanos" class="no-decoration" target="_blank"> <i class="fa fa-envelope fa-lg"></i> </a>
-					</li>
-				</ul>
-
-				<!-- Navbar Right -->
-				<ul class="nav navbar-nav navbar-right">
-					<!-- Buscar -->
-					<form action="/tracks/search" class="navbar-form navbar-left" method="get" role="search">
-						<div class="form-group">
-							<input type="text" name="q" class="form-control" placeholder="<?php echo __('Buscar'); ?>">
-						</div>
-
-						<div class="form-group">
-							<div class="checkbox">
-								<label>
-									<!-- <input type="checkbox"> Remember me -->
-									<input type="checkbox" name="c" value="1"> Categorías
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="checkbox">
-								<label>
-									<!-- <input type="checkbox"> Remember me -->
-									<input type="checkbox" name="t" value="1"> Etiquetas
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="checkbox">
-								<label>
-									<!-- <input type="checkbox"> Remember me -->
-									<input type="checkbox" name="u" value="1"> Usuarios
-								</label>
-							</div>
-						</div>
-						<button type="submit" class="btn btn-default">
-							<?php echo __('Buscar'); ?>
-						</button>
-					</form>
-
-					<!-- Login -->
-					<?php if (AuthComponent::user('name') != ''): ?>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<?php echo AuthComponent::user('name'); ?>
-						<b class="caret"></b> </a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="/tracks/create"> <?php echo __('Nuevo Video'); ?> </a>
-							</li>
-							<li>
-								<a href="/tracks"> <?php echo __('Listar Videos'); ?> </a>
-							</li>
-							<li>
-								<a href="/users/logout"> <?php echo __('Salir'); ?> </a>
-							</li>
-						</ul>
-					</li>
-
-					<?php else: ?>
-					<li>
-						<?php
-						echo $this->Html->link(__('Ingresar'), array(
-							'controller' => 'users',
-							'action' => 'login'
-						), array('id' => 'menu_superior_derecha_verde'));
-						?>
-					</li>
-					<?php endif; ?>
-
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</nav>
-
 		<div class="container">
 
 			<!-- Logo -->
@@ -181,8 +55,124 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 					<img class="img-responsive logo-superior" src="/img/logos/bannerTrama.png" />
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-sm-10">
+					<?php echo $this->fetch('content'); ?>
+				</div>
+				
+				
+				<div class="col-sm-2">
+					
+					<!-- Login -->
+					<div class="row">
+						<div class="col-sm-12">
+							<?php if (AuthComponent::user('name') != ''): ?>
+								<p class="text-center text-grisOscuro">
+									<?php echo __('Bienvenido, ') . AuthComponent::user('name'); ?>
+								</p>
+								
+								<ul class="list-group menu-sm">
+									<li class="list-group-item">
+										<a href="http://www.tramaaudiovisual.com.ar" target="_blank"> 
+											<i class="fa fa-home"></i> <?php echo __('Trama Audiovisual'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/"> 
+											<i class="fa fa-film"></i> <?php echo __('Producciones'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/tracks/create"> 
+											<i class="fa fa-cloud-upload"></i> <?php echo __('Nuevo Video'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/tracks">
+											<i class="fa fa-list"></i> <?php echo __('Listar Videos'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/users/logout">
+											<i class="fa fa-sign-out"></i> <?php echo __('Salir'); ?>
+										</a>
+									</li>
+								</ul>
+							<?php else: ?>
+								<ul class="list-group menu-sm">
+									<li class="list-group-item">
+										<a href="http://www.tramaaudiovisual.com.ar" target="_blank"> 
+											<i class="fa fa-home"></i> <?php echo __('Trama Audiovisual'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/"> 
+											<i class="fa fa-film"></i> <?php echo __('Producciones'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/users/login"> 
+											<i class="fa fa-user"></i> <?php echo __('Ingresar'); ?>
+										</a>
+									</li>
+								</ul>
+							<?php endif; ?>
+						</div>
+					</div>
+					
+					<hr class="grisOscuro" />
+					
+					<!-- Buscar -->
+					<div class="row">
+						<div class="col-sm-12">
+							<form action="/tracks/search" method="get" role="search">
+								<div class="form-group">
+									<input type="text" name="q" class="form-control" placeholder="<?php echo __('Buscar'); ?>">
+								</div>
+								<span class="text-grisOscuro">Buscar por:</span>
+								<ul class="list-undecorated">
+									<li>
+										<div class="form-group">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="c" value="1"> Categorías
+												</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="form-group">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="t" value="1"> Etiquetas
+												</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="form-group">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="u" value="1"> Usuarios
+												</label>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="row text-center">
+									<button type="submit" class="btn btn-default">
+										<?php echo __('Buscar'); ?>
+									</button>
+									
+								</div>
+							</form>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
 
-			<?php echo $this->fetch('content'); ?>
 
 		</div>
 

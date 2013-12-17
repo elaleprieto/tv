@@ -45,7 +45,7 @@ if(isset($this->request->data['query'])):
 									</td>
 									<td>
 										<?php foreach ($track['Tag'] as $tag): ?>
-											<a href="/buscar/<?php echo $tag['title']; ?>">
+											<a href="/buscar/<?php echo $tag['title']; ?>?t=1">
 												<?php echo $tag['title'] . ' '; ?>
 											</a>
 										<?php endforeach; ?>

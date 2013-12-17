@@ -1,13 +1,7 @@
 <?php //debug($track) ?>
 
 <div class="row">
-	<div class="col-sm-8">
-		<!-- <div class="row">
-			<div class="col-sm-10 col-sm-offset-1 text-right">
-				<h4 class="category"> [ <?php //echo strtolower($track['Category'][0]['title']); ?> ] </h4>
-			</div>
-		</div> -->
-
+	<div class="col-sm-12">
 		<!-- detalles del track -->
 		<div class="row">
 			<div class="col-sm-12">
@@ -41,10 +35,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		<br />
 		<div class="row">
-			<div class="col-sm-10">
+			<div class="col-sm-12">
 				<?php echo $kUrlEmbed ? $kUrlEmbed : '&nbsp;'; ?>
 			</div>
 		</div>

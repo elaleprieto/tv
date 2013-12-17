@@ -5,6 +5,7 @@ a
 	
 	&:hover
 		color: $azulClaro
+		text-decoration: none !important
 
 body
 	background-color: $white
@@ -30,6 +31,9 @@ h3, h5
 	& > a
 		color: $naranja
 
+hr.grisOscuro
+	border-color: $grisOscuro !important
+
 .auspiciantes
 	margin-bottom: 30px
 
@@ -40,7 +44,7 @@ h3, h5
 		padding: 15px
 
 .checkbox
-	color: $white
+	color: $grisDefault
 	
 
 .container
@@ -50,6 +54,9 @@ h3, h5
 	background-color: $grisOscuro
 	color: $white
 
+.list-undecorated
+	list-style: none
+	
 .logo-superior
 	// margin-top: 110px
 	// position: absolute
@@ -61,9 +68,13 @@ h3, h5
 	.img-responsive
 		width: 100px		
 
-// .nav > li > a:hover
-	// background-color: $naranjaOscuro
-// 	
+.menu-sm
+	font-size: 0.9em
+	
+	i
+		margin-right: 0.5em
+		text-align: center
+		width: 1.4em
 
 .nav-categorias
 	position: relative
@@ -108,5 +119,5 @@ h3, h5
 	position: relative
 	z-index: 1000
 
-a.no-decoration:hover
-	text-decoration: none
+.text-grisOscuro
+	color: $grisOscuro

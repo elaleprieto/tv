@@ -1,7 +1,7 @@
 <?php //debug($track) ?>
 
 <div class="row">
-		<div class="col-sm-8">
+	<div class="col-sm-12">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 text-right">
 				<h4 class="category"> [ <?php echo strtolower($track['Category'][0]['title']); ?> ] </h4>
@@ -58,23 +58,11 @@
 				</div>
 			</div>
 		</div>
-		<br />
 		<div class="row">
 			<div class="col-sm-10">
 				<?php echo $kUrlEmbed ? $kUrlEmbed : '&nbsp;'; ?>
 			</div>
 		</div>
-		<!-- <div class="row">
-		<div class="col-sm-10">
-		<hr />
-		<p>
-		<strong>SINOPSIS</strong>
-		</p>
-		</div>
-		<div class="col-sm-10">
-		<?php echo $track['Track']['sinopsis_es'] ?>
-		</div>
-		</div> -->
 		<div class="row">
 			<div class="col-sm-10">
 				<ul class="nav nav-tabs" id="myTab">

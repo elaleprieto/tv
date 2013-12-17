@@ -387,12 +387,12 @@ class TracksController extends AppController {
 				)
 				, array('table' => 'categories_tracks'
 					, 'alias' => 'CategoriesTrack'
-					, 'type' => 'inner'
+					, 'type' => 'left'
 					, 'conditions' => array('Track.id = CategoriesTrack.track_id')
 				)
 				, array('table' => 'categories'
 					, 'alias' => 'Category'
-					, 'type' => 'inner'
+					, 'type' => 'left'
 					, 'conditions' => array('CategoriesTrack.category_id = Category.id')
 				)
 			);
@@ -406,7 +406,6 @@ class TracksController extends AppController {
 			# Se agregan estas restricciones porque quieren buscar solo en el titulo y en etiquetas
 			// array_push($orConditions, array('lower(Tag.title) LIKE' => "%$query%"));
 			// array_push($orConditions, array('lower(Track.title) LIKE' => "%$query%"));
-
 
 			
 			foreach ($query as $queryString):
