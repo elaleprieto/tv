@@ -54,7 +54,7 @@ $tracks = $this->requestAction(Router::url(array('controller' => 'tracks', 'acti
 				<div class="row">
 			<?php endif; ?>
 					<div class="col-video">
-							<div class="row text-center videoThumb">
+							<div class="row text-center">
 									<?php
 									$date = date('Ymdhds');
 									$url = 'http://librekaltura.com.ar/p/1/sp/100/thumbnail/entry_id/' . $tracks[$i]['Track']['entryId'] . '/width/135/height/81'.$date;
