@@ -64,7 +64,7 @@ echo $this->Html->script(array(
 					'class' => 'col-sm-12 form-control',
 					'div' => 'col-sm-4',
 					'label' => false,
-					'placeholder' => 'Duracion',
+					'placeholder' => 'XX min. XX seg.',
 					'type' => 'text'
 				));
 				?>
@@ -210,7 +210,8 @@ echo $this->Html->script(array(
 			</div>
 			<div class="row">
 				<p class="text-center">
-					No cierre esta ventana, y espere que termine de subir el video para guardar la ficha. 
+					No cierre esta ventana y espere hasta que termine de subir el video.
+					Haga clic en "Next" dos veces y luego podrá guardar la ficha.
 					Si desea cargar otro video, haga clic <a href="/tracks/create" target="_blank">aquí</a>.
 				</p>
 				<button class="btn col-sm-2 col-sm-offset-5" type="submit" x-ng-disabled="!entryId">

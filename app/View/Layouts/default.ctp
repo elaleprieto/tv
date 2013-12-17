@@ -52,7 +52,9 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 			<!-- Logo -->
 			<div class="row">
 				<div class="col-sm-12">
-					<img class="img-responsive logo-superior" src="/img/logos/bannerTrama.png" />
+					<a href="http://www.tramaaudiovisual.com.ar">
+						<img class="img-responsive logo-superior" src="/img/logos/bannerTrama.png" />
+					</a>
 				</div>
 			</div>
 			<div class="row">
