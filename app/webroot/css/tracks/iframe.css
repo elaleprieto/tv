@@ -5,13 +5,14 @@
   overflow: hidden;
   margin: 7px;
   position: relative;
-  width: 241px;
+  width: 230px;
 }
 /* line 9, ../../sass/tracks/iframe.sass */
 .col-video h3 {
   margin-top: 10px;
+  font-size: 18px;
 }
-/* line 12, ../../sass/tracks/iframe.sass */
+/* line 13, ../../sass/tracks/iframe.sass */
 .col-video img {
   height: 120px;
 }
