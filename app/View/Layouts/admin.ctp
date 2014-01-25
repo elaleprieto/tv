@@ -24,13 +24,15 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 	<head>
 		<?php echo $this->Html->charset(); ?>
 		<title> <?php echo $cakeDescription ?>:
-			<?php echo $title_for_layout; ?>
-		</title>
+			<?php echo $title_for_layout; ?> </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css(array('vendor/bootstrap.min', 'layouts/default'));
+		echo $this->Html->css(array(
+			'vendor/bootstrap.min',
+			'layouts/default'
+		));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		?>
@@ -45,77 +47,147 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 
 	</head>
 	<body>
+		<div class="container">
 
-		<nav class="navbar navbar-inverse" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Trama Audiovisual</a>
+			<!-- Logo -->
+			<div class="row">
+				<div class="col-sm-12">
+					<a href="http://www.tramaaudiovisual.com.ar">
+						<img class="img-responsive logo-superior" src="/img/logos/bannerTrama.png" />
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10">
+					<?php echo $this->fetch('content'); ?>
+				</div>
+				
+				
+				<div class="col-sm-2">
+					
+					<!-- Login -->
+					<div class="row">
+						<div class="col-sm-12">
+							<?php if (AuthComponent::user('name') != ''): ?>
+								<p class="text-center text-grisOscuro">
+									<?php echo __('Bienvenido, ') . AuthComponent::user('name'); ?>
+								</p>
+								
+								<ul class="list-group menu-sm">
+									<li class="list-group-item">
+										<a href="http://www.tramaaudiovisual.com.ar" target="_blank"> 
+											<i class="fa fa-home"></i> <?php echo __('Trama Audiovisual'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/"> 
+											<i class="fa fa-film"></i> <?php echo __('Producciones'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/usuarios/nuevo"> 
+											<i class="fa fa-user"></i> <?php echo __('Nuevo Usuario'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/usuarios/listado"> 
+											<i class="fa fa-users"></i> <?php echo __('Listar Usuarios'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/tracks/create"> 
+											<i class="fa fa-cloud-upload"></i> <?php echo __('Nuevo Video'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/tracks">
+											<i class="fa fa-list"></i> <?php echo __('Listar Videos'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/users/logout">
+											<i class="fa fa-sign-out"></i> <?php echo __('Salir'); ?>
+										</a>
+									</li>
+								</ul>
+							<?php else: ?>
+								<ul class="list-group menu-sm">
+									<li class="list-group-item">
+										<a href="http://www.tramaaudiovisual.com.ar" target="_blank"> 
+											<i class="fa fa-home"></i> <?php echo __('Trama Audiovisual'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/"> 
+											<i class="fa fa-film"></i> <?php echo __('Producciones'); ?>
+										</a>
+									</li>
+									<li class="list-group-item">
+										<a href="/users/login"> 
+											<i class="fa fa-user"></i> <?php echo __('Ingresar'); ?>
+										</a>
+									</li>
+								</ul>
+							<?php endif; ?>
+						</div>
+					</div>
+					
+					<hr class="grisOscuro" />
+					
+					<!-- Buscar -->
+					<div class="row">
+						<div class="col-sm-12">
+							<form action="/tracks/search" method="get" role="search">
+								<div class="form-group">
+									<input type="text" name="q" class="form-control" placeholder="<?php echo __('Buscar'); ?>">
+								</div>
+								<span class="text-grisOscuro">Buscar por:</span>
+								<ul class="list-undecorated">
+									<li>
+										<div class="form-group">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="c" value="1"> Categorías
+												</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="form-group">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="t" value="1"> Etiquetas
+												</label>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="form-group">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" name="u" value="1"> Usuarios
+												</label>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="row text-center">
+									<button type="submit" class="btn btn-default">
+										<?php echo __('Buscar'); ?>
+									</button>
+									
+								</div>
+							</form>
+							
+						</div>
+					</div>
+					
+				</div>
 			</div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="/">Inicio</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/por-que-trama">¿Por qué Trama?</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/que-hacemos">¿Qué hacemos?</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/quienes-somos">¿Quiénes somos?</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/como-sumarse">¿Cómo sumarse?</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/contactanos">Contactanos</a>
-					</li>
-					<li>
-						<a href="http://tramaaudiovisual.com.ar/index.php/noticias">Noticias</a>
-					</li>
-				</ul>
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="<?php echo __('Buscar'); ?>">
-					</div>
-					<button type="submit" class="btn btn-default">
-						<?php echo __('Buscar'); ?>
-					</button>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank">
-							<i class="fa fa-facebook-square fa-lg"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/TramaAudiovisual" class="no-decoration" target="_blank">
-							<i class="fa fa-twitter-square fa-lg"></i>
-						</a>
-					</li>
-					<li>
-						<a href="/users/login" class="no-decoration" target="_blank">
-							<?php echo __('Ingresar'); ?>
-						</a>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</nav>
-
-		<div class="container">
-			<?php echo $this->fetch('content'); ?>
 
 		</div>
-		
+
 		<!-- footer -->
 		<footer class="navbar-inverse">
 
@@ -123,7 +195,14 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 			<div class="row auspiciantes">
 				<div class="col-sm-1 col-sm-offset-4 text-center">
 					<?php
-					echo $this->Html->image('logos/incaa.png', array('alt' => 'INCAA', 'border' => '0', 'class' => 'img-responsive'));
+					echo $this->Html->link($this->Html->image('logos/usinademedios.png', array(
+						'alt' => 'Usina de Medios',
+						'border' => '0',
+						'class' => 'img-responsive'
+					)), 'http://www.usinademedios.org.ar/', array(
+						'escape' => false,
+						'target' => '_blank'
+					));
 					?>
 				</div>
 				<!-- Descomentar si se quiere el logo de TDA de vuelta -->
@@ -139,26 +218,26 @@ $cakeDescription = __d('cake_dev', 'Trama Audiovisual');
 				-->
 				<div class="col-sm-2 col-sm-offset-2 text-center">
 					<?php
-					echo $this->Html->image('logos/argentinaPaisDeHonor.png', array('alt' => 'Argentina, país de honor', 'border' => '0', 'class' => 'img-responsive'));
+					echo $this->Html->link($this->Html->image('logos/geomedio.png', array(
+						'alt' => 'GeoMedio',
+						'border' => '0',
+						'class' => 'img-responsive'
+					)), 'http://www.geomedio.com.ar/', array(
+						'escape' => false,
+						'target' => '_blank'
+					));
 					?>
 				</div>
 			</div>
 		</footer>
 
-		<!-- Logo superior (3d) -->
-		<!-- <div class="col-sm-1 col-sm-offset-1 logo-superior">
-		<a href="/"><img src="/img/federal.png" border="0" class="img-responsive" /></a> -->
-		<?php
-		// echo $this->Html->image('federal.png'
-		// , array('alt' => 'Federal Distribuciones', 'border' => '0', 'class'=>'img-responsive')
-		// );
-		?>
-		<!-- </div> -->
-
 		<?php echo $this->element('sql_dump'); ?>
 
 		<?php
-		echo $this->Html->script(array('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', 'vendor/bootstrap.min'));
+		echo $this->Html->script(array(
+			'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+			'vendor/bootstrap.min'
+		));
 		echo $this->fetch('script');
 		?>
 		<script>

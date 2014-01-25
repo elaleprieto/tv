@@ -49,6 +49,12 @@
 	Router::connect('/editar/*', array('controller' => 'tracks', 'action' => 'edit'));
 	Router::connect('/listado', array('controller' => 'tracks', 'action' => 'index'));
 	
+	# Usuarios
+	Router::connect('/usuarios/editar/*', array('controller' => 'users', 'action' => 'edit'));
+	Router::connect('/usuarios/listado', array('controller' => 'users', 'action' => 'index'));
+	Router::connect('/usuarios/nuevo', array('controller' => 'users', 'action' => 'add'));
+	Router::connect('/usuarios/ver/*', array('controller' => 'users', 'action' => 'view'));
+	
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

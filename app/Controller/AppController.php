@@ -47,11 +47,13 @@ class AppController extends Controller {
     )
   );
 
-  // public function beforeFilter() {
-    // if (AuthComponent::user('role') === 'admin') {
-            // $this -> layout = 'admin';
-        // }
-  // }
+  public function beforeFilter() {
+  	$user = AuthComponent::user(); 
+	# Usuario administrador(40) y superiores
+    if ($user['Rol']['weight'] >= '40') {
+        $this -> layout = 'admin';
+    }
+  }
 
   public function isAuthorized($user) {
     // Admin can access every action

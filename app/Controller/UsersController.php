@@ -17,7 +17,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('add', 'logout');
+		$this->Auth->allow('logout');
 	}
 
 	public function login() {
@@ -42,16 +42,21 @@ class UsersController extends AppController {
 			return true;
 		}
 
-		// The owner of a post can edit and delete it
-		if (in_array($this->action, array(
-			'edit',
-			'delete'
-		))) {
-			$postId = $this->request->params['pass'][0];
-			if ($this->Post->isOwnedBy($postId, $user['id'])) {
+		// // The owner of a post can edit and delete it
+		// if (in_array($this->action, array('edit', 'delete'))) {
+			// $postId = $this->request->params['pass'][0];
+			// if ($this->Post->isOwnedBy($postId, $user['id'])) {
+				// return true;
+			// }
+		// }
+
+		$user = AuthComponent::user(); 
+		# Usuario administrador(40) y superiores
+	    if ($user['Rol']['weight'] >= '40') {
+			if (in_array($this->action, array('add', 'delete', 'edit', 'index'))) {
 				return true;
 			}
-		}
+	    }
 
 		return parent::isAuthorized($user);
 	}
@@ -63,6 +68,9 @@ class UsersController extends AppController {
 	 */
 	public function index() {
 		$this->User->recursive = 0;
+		$this->Paginator->settings = array(
+	        'conditions' => array('Rol.weight <' => '40'),
+	    );
 		$this->set('users', $this->paginate());
 	}
 
@@ -96,9 +104,9 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
-		
+
 		# weight 10 = Usuario
-		$options['conditions'] = array('weight <=' => 10); 
+		$options['conditions'] = array('weight <=' => 10);
 		$rols = $this->User->Rol->find('list', $options);
 		$this->set(compact('rols'));
 	}
@@ -125,6 +133,11 @@ class UsersController extends AppController {
 		} else {
 			$this->request->data = $this->User->read(null, $id);
 		}
+		
+		# weight 10 = Usuario
+		$options['conditions'] = array('weight <=' => 10);
+		$rols = $this->User->Rol->find('list', $options);
+		$this->set(compact('rols'));
 	}
 
 	/**
