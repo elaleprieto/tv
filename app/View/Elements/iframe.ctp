@@ -68,7 +68,7 @@ $tracks = $this->requestAction(Router::url(array('controller' => 'tracks', 'acti
 									?>
 							</div>
 							<h3>
-								<a href="/tracks/view/<?php echo $track['Track']['id']?>">
+								<a href="/tracks/view/<?php echo $tracks[$i]['Track']['id']?>">
 									<?php echo $tracks[$i]['Track']['title'] ?>
 								</a>
 							</h3>
